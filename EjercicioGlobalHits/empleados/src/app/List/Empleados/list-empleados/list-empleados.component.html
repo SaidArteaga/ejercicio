@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>Listado de Empleados</h2>
+            <h2>Salario Total de la empresa ${{salarios.toFixed(2)}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Salario</th>
+                    
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of listaEmpleados">
+                    <th scope="row">{{c.id}}</th>
+                    <td>{{c.nombre}}</td>
+                    <td>{{c.cargo}}</td>
+                    <td>{{c.salario}}</td>
+                    <td> <a class="btn btn-xs btn-primary" [routerLink]="['/Empleados/editar', c.id]">Editar</a></td>
+                    <td> <button class="btn btn-xs btn-danger" (click)="eliminarEmpleado(c.id)">Eliminar</button></td>
+                
+                  </tr>
+                  <tr>
+                                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
